@@ -7,7 +7,6 @@ const Product = () => {
 
     return (
         <div>
-            <p>this is products</p>
             <div className='grid p-4 justify-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-center'>
                 
                 {products.map((product,id)=> <Productcart key={id} product={product}></Productcart>)}   

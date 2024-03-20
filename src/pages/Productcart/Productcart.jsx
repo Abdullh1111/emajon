@@ -1,8 +1,20 @@
 import PropTypes from "prop-types"
+import { Link, useNavigate } from "react-router-dom";
 
 const Productcart = ({product}) => {
-    const {title,thumbnail,price} = product;
-    console.log(product)
+    const {id,title,thumbnail,price} = product;
+    // console.log(product)
+    const navigete = useNavigate();
+    const handleNavigation = () => {
+        console.log("hello")
+        const user = true;
+        if(user){
+            navigete(`/product/${id}`)
+        }
+        else{
+            navigete("/")
+        }
+    }
     return (
         <div>
             
@@ -36,10 +48,11 @@ const Productcart = ({product}) => {
             <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
         </div>
         <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-gray-900 dark:text-white">{price}</span>
-            <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <span className="text-3xl font-bold text-gray-900 dark:text-white">${price}</span>
+ 
+                <button onClick={handleNavigation} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 view details
-            </button>
+                </button>
         </div>
     </div>
 </div>

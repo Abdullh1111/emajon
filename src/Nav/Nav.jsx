@@ -4,7 +4,7 @@ import './nav.css'
 const Nav = () => {
     return (
         <div>
-           <ul className="flex justify-between p-8 text-2xl shadow-md">
+           <ul className="md:flex justify-between p-8 text-2xl shadow-md">
                 <p>emazon</p>
                 <li className="flex gap-4">
                     <NavLink to={"/"}>Home</NavLink>
